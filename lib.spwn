@@ -1,15 +1,15 @@
-nDimens = (size:[@number],defalut = 0){
+nDimens = (size:[@number],default = 0){
     if size.length == 0 {
-        return switch defalut {
-            @macro: defalut(),
-            else: defalut,
+        return switch default {
+            @macro: default(),
+            else: default,
         }
     }
     let array = []
     let temp = size
     let current = $.max(temp.shift(),1)
     for i in ..current {
-        array.push(nDimens(temp,defalut))
+        array.push(nDimens(temp,default))
     }
     return array
 }
