@@ -7,7 +7,7 @@ nDimens = (size:[@number],defalut = 0){
     }
     let array = []
     let temp = size
-    let current = temp.shift()
+    let current = $.max(temp.shift(),1)
     for i in ..current {
         array.push(nDimens(temp,defalut))
     }
