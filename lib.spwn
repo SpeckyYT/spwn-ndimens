@@ -1,0 +1,17 @@
+nDimens = (size:[@number],defalut = 0){
+    if size.length == 0 {
+        return switch defalut {
+            @macro: defalut(),
+            else: defalut,
+        }
+    }
+    let array = []
+    let temp = size
+    let current = temp.shift()
+    for i in ..current {
+        array.push(nDimens(temp,defalut))
+    }
+    return array
+}
+
+return nDimens
